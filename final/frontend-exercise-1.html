@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>ideeli - exercise: create a slideshow widget</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="jquery.andySlides.js"></script>
+    <!--<script src="jquery.slides.js"></script>-->
+    <style>
+    	#slideShow {
+			margin:0 auto;
+			width:340px;
+			height:400px;
+			position:relative;
+		}
+		#slideShow #slidesContainer {
+			margin:0 auto;
+  			width:240px;
+  			height:400px;
+  			overflow: hidden;
+  			position:relative;
+		}
+		#slideShow #slidesContainer .slide {
+  			margin:0 auto;
+  			width:240px; /* reduce by 20 pixels of #slidesContainer to avoid horizontal scroll */
+  			height:360px;
+		}
+    </style>
+  </head>
+
+  <body>
+    <h3>Exercise Instructions</h3>
+
+    <p>Create a reusuable slideshow widget using the the images below.</p>
+
+    <h4>Requirements</h4>
+
+    <ol>
+      <li>The transition time between slides should be configurable, but defaults to 5 seconds.</li>
+      <li>Show only slide at a time.</li>
+      <li>Bonus points for readability, originality, and extendibility.</li>
+    </ol>
+
+    <p>Feel free to use a JavaScript library (e.g., jQuery, Prototype, YUI,
+      ExtJs, dojo) to support your work but please do not use any plugins or
+      pre-built widgets. There are plenty of implementations and examples out
+      there. However, you cannot simply copy those examples or an already
+      created widget.</p>
+
+    <p>Creating this widget should demonstrate your knowledge of JavaScript, and
+     show off your software design skills. Include implementation notes.
+     No fancy transition effects required.</p>
+
+    <div id="slideShow">
+    	<div id="slidesContainer">
+      		<img class="slide" src="http://3.icdn.ideeli.net/attachments/108885970/HAZ-npay-001-1_grid_imagegrid_image240x340.jpg" width="240" height="340" alt="Blouse 1" />
+      		<img class="slide" src="http://3.icdn.ideeli.net/attachments/108885302/HAZ-npau-001-1_grid_imagegrid_image240x340.jpg" width="240" height="340" alt="Blouse 2" />
+     		<img class="slide" src="http://1.icdn.ideeli.net/attachments/108878854/HAZ-np86-002-1_grid_imagegrid_image240x340.jpg" width="240" height="340" alt="Blouse 3" />
+    	</div>
+    </div>
+	<script>
+		$(document).ready(function()
+		{
+			$('.slideShow').slideShow({
+				interval: 2000
+			});
+		});
+	</script>
+  </body>
+</html>
